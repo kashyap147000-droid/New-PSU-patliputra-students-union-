@@ -1,0 +1,277 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patliputra Students Union | Student Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@500;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .heading-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .student-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+
+        .animate-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .shivansh-banner {
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: linear-gradient(90deg, #3b82f6, #f59e0b, #3b82f6);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .member-slot {
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-slot:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .member-slot::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #3b82f6;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .member-slot:hover::after {
+            transform: scaleY(1);
+        }
+
+        .group-circle {
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Mobile Nav -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">P</div>
+                <span class="font-bold text-xl tracking-tight text-slate-800">PSU</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
+                <a href="#mission" class="hover:text-blue-600 transition">Our Mission</a>
+                <a href="#leadership" class="hover:text-blue-600 transition">Leadership</a>
+                <a href="#members" class="hover:text-blue-600 transition">The 45 Founders</a>
+            </div>
+            <div class="text-xs font-bold text-blue-600 border border-blue-600 px-3 py-1 rounded-full uppercase">Student Group</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate__animated animate__fadeIn">
+                <span class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+                    Founded by Students, For Students
+                </span>
+                <h1 class="heading-font text-5xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
+                    PATLIPUTRA <br><span class="text-blue-600">STUDENTS</span> UNION
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
+                    We are a collective of 45 determined students moving to Patna for higher education. This union was built from the ground up to support one another as we navigate our academic journey in the city.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#members" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">
+                        Meet the Founders
+                    </a>
+                </div>
+            </div>
+            <div class="relative animate__animated animate__zoomIn">
+                <div class="group-circle absolute inset-0 -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" 
+                     alt="Students Collaboration" 
+                     class="rounded-[2.5rem] shadow-2xl border-8 border-white">
+                
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 max-w-[240px]">
+                    <div class="flex -space-x-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center text-[10px] text-white">#1</div>
+                        <div class="w-10 h-10 rounded-full bg-orange-500 border-2 border-white flex items-center justify-center text-[10px] text-white">#2</div>
+                        <div class="w-10 h-10 rounded-full bg-green-500 border-2 border-white flex items-center justify-center text-[10px] text-white">#3</div>
+                        <div class="w-10 h-10 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] text-slate-600 font-bold">+42</div>
+                    </div>
+                    <p class="text-xs font-bold text-slate-800">45 Students United for Education</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Mission -->
+    <section id="mission" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center animate-reveal">
+            <h2 class="heading-font text-3xl font-extrabold text-slate-900 mb-6 italic">"Not a College, Not a School—A Brotherhood of 45."</h2>
+            <p class="text-slate-500 text-lg leading-relaxed">
+                As we prepare to transition into Patna's educational environment, we realized that standing together is more powerful than standing alone. We formed the <strong>Patliputra Students Union</strong> as a support network to share resources, knowledge, and navigate city life together.
+            </p>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 animate-reveal">
+                <h2 class="heading-font text-4xl font-black text-slate-900 mb-4">Core Leadership</h2>
+                <div class="w-20 h-2 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Co-Founder -->
+                <div class="animate-reveal p-8 rounded-3xl bg-white shadow-sm border border-slate-100 text-center">
+                    <div class="w-20 h-20 bg-blue-50 rounded-2xl mx-auto mb-6 flex items-center justify-center text-blue-600">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+                    </div>
+                    <h3 class="heading-font text-2xl font-bold text-slate-900">Shivansh Kashyap</h3>
+                    <p class="text-blue-600 font-bold text-sm tracking-widest mt-1 uppercase">Co-Founder</p>
+                    <p class="mt-4 text-slate-500 text-sm">The visionary who brought the 45 together.</p>
+                </div>
+
+                <!-- President -->
+                <div class="animate-reveal p-10 rounded-[2.5rem] bg-blue-600 shadow-2xl text-center text-white transform -translate-y-4">
+                    <div class="w-24 h-24 bg-white/10 rounded-3xl mx-auto mb-6 flex items-center justify-center backdrop-blur-sm">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="heading-font text-3xl font-bold">Pritam Kumar</h3>
+                    <p class="text-blue-200 font-bold text-sm tracking-widest mt-2 uppercase">President</p>
+                    <p class="mt-4 text-blue-100 text-sm">Commanding the group with strength and purpose.</p>
+                </div>
+
+                <!-- Vice President -->
+                <div class="animate-reveal p-8 rounded-3xl bg-white shadow-sm border border-slate-100 text-center">
+                    <div class="w-20 h-20 bg-blue-50 rounded-2xl mx-auto mb-6 flex items-center justify-center text-blue-600">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="heading-font text-2xl font-bold text-slate-900">Om Prakash</h3>
+                    <p class="text-blue-600 font-bold text-sm tracking-widest mt-1 uppercase">Vice President</p>
+                    <p class="mt-4 text-slate-500 text-sm">Managing coordination and student welfare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Roster -->
+    <section id="members" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 animate-reveal">
+                <div>
+                    <h2 class="heading-font text-4xl font-black text-slate-900">The Founder List</h2>
+                    <p class="text-slate-500 mt-2">The original 45 students who started this movement.</p>
+                </div>
+                <div class="mt-4 md:mt-0 px-6 py-2 bg-slate-100 rounded-full font-bold text-slate-600">
+                    Total Strength: 45
+                </div>
+            </div>
+
+            <!-- List Placeholder -->
+            <div id="member-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <script>
+                    for(let i=1; i<=45; i++) {
+                        document.write(`
+                            <div class="member-slot animate-reveal p-5 rounded-xl flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs">
+                                    ${i}
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-slate-800 font-bold text-sm uppercase tracking-wide">Pending Entry</h4>
+                                    <p class="text-xs text-slate-400">Founder Member</p>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+
+            <div class="mt-16 p-10 rounded-[2rem] bg-orange-50 border-2 border-orange-100 text-center animate-reveal">
+                <p class="text-orange-800 font-bold text-lg mb-2">Notice for Founders</p>
+                <p class="text-orange-600">Names for all 45 slots will be updated tomorrow. Stay tuned!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shivansh Credit Section -->
+    <section class="py-32 bg-slate-900 flex items-center justify-center text-center overflow-hidden relative">
+        <div class="absolute w-64 h-64 bg-blue-600/20 blur-[120px] rounded-full top-0 left-0"></div>
+        <div class="absolute w-64 h-64 bg-orange-600/10 blur-[120px] rounded-full bottom-0 right-0"></div>
+        
+        <div class="z-10 animate-reveal">
+            <p class="text-slate-400 uppercase tracking-[0.4em] text-xs mb-4 font-black">Architect of the Union</p>
+            <h2 class="shivansh-banner text-6xl md:text-8xl font-black mb-6">SHIVANSH<br>KASHYAP</h2>
+            <div class="flex justify-center items-center space-x-4">
+                <div class="h-[1px] w-12 bg-slate-700"></div>
+                <p class="text-slate-500 font-medium">Powering the Future</p>
+                <div class="h-[1px] w-12 bg-slate-700"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="py-10 bg-slate-950 text-slate-600 text-center text-sm border-t border-slate-900">
+        <p>&copy; 2024 PSU - Patliputra Students Union. Independent Student Group.</p>
+    </footer>
+
+    <script>
+        // Reveal Animations on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add staggered delays to members
+        document.querySelectorAll('.member-slot').forEach((el, index) => {
+            el.style.transitionDelay = `${(index % 10) * 0.05}s`;
+        });
+    </script>
+</body>
+</html>
+
+```
